@@ -1,6 +1,15 @@
 <p> {{version}}{{initailtext}}</p>
-    <label for="fname">First name:</label>
-    <input type="text" id="inputText" [value]="text" >
-    <button (click)="inputchange()">Click mich
-
-    </button>
+<label for="fname">URL:</label>
+<input type="text" id="inputText" [value]="text">
+<button (click)="inputchange()">Change Input</button>
+<button (click)="printQRCode()">print</button>
+<div id="QRCodes">
+    <br>
+    <img id="inputImage" src="" alt="QRCode" />
+    <br>
+    <canvas id="canvas"></canvas>
+    <br>
+    <div id="svgElement">
+        <!-- hier wird ein SVG Element mit InnerHtml hinzugefügt-->
+    </div>
+</div>
