@@ -1,15 +1,27 @@
-<p> {{version}}{{initailtext}}</p>
-<label for="fname">URL:</label>
-<input type="text" id="inputText" [value]="text">
-<button (click)="inputchange()">Change Input</button>
-<button (click)="printQRCode()">print</button>
-<div id="QRCodes">
+<h1 class="md-display-1">{{initailtext}}</h1>
+<h3> {{version}}</h3>
+<h3> Eingebunden wird das Package: <a href="https://www.npmjs.com/package/qrcode">Node-QRCode</a></h3>
+<div id="Page">
+  <mat-form-field (keyup)=inputchange() class="inputURL">
+    <mat-label for="fname">URL:</mat-label>
+    <input matInput type="text" id="inputText"  [value]="text">
+  </mat-form-field>
+  <br>
+  <button mat-stroked-button color="primary" (click)="randmonInput()">Change Random Input</button>
+  <button mat-stroked-button color="accent" (click)="printQRCode()">print</button>
+  <div id="QRCodes">
+    <p>SVG Element</p>
+    <div id="svgElement">
+      <!-- hier wird ein SVG Element mit InnerHtml hinzugefügt-->
+    </div>
     <br>
+    <p>Img Element</p>
     <img id="inputImage" src="" alt="QRCode" />
     <br>
+    <p>Canvas Element</p>
     <canvas id="canvas"></canvas>
-    <br>
-    <div id="svgElement">
-        <!-- hier wird ein SVG Element mit InnerHtml hinzugefügt-->
-    </div>
+
+
+
+  </div>
 </div>
